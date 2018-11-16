@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -12,9 +14,11 @@ import { AppComponent } from './app.component';
 
 // Services
 import { DogsService } from './services/dogs.service';
-import { RazasComponent } from './razas/razas.component';
 import { ObjToArrayPipe } from './pipes/obj-to-array/obj-to-array.pipe';
+
+// Components
 import { ImgComponent } from './components/img/img.component';
+import { RazasComponent } from './components/razas/razas.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +35,15 @@ import { ImgComponent } from './components/img/img.component';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     DogsService,
     StatusBar,
     SplashScreen,
+    ObjToArrayPipe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -16,12 +16,13 @@ export class ObjToArrayPipe implements PipeTransform {
 
     const arrayDeCadenas = manolo4.split(',');
 
+    console.log(arrayDeCadenas.keys());
+
     for (const i in arrayDeCadenas) {
       arrayDeCadenas[i] = arrayDeCadenas[i].replace("]", '');
       arrayDeCadenas[i] = arrayDeCadenas[i].replace("[", '');
     }
-
-    console.log(arrayDeCadenas);
+    
     return arrayDeCadenas;
   }
 

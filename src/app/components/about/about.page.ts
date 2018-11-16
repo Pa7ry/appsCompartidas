@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 // Services
-import { DogsService } from './../services/dogs.service';
+import { DogsService } from './../../services/dogs.service';
 
 // Pages
 import { RazasComponent } from './../razas/razas.component';
